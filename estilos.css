@@ -1,0 +1,5 @@
+
+body.otono    { background-image: url('img/fondo_otono.jpg'); }
+body.invierno { background-image: url('img/fondo_invierno.jpg'); }
+body.otono #boton-estacion    { background-color: var(--otono-btn); }
+body.invierno #boton-estacion { background-color: var(--invierno-btn); }

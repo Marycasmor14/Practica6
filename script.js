@@ -1,13 +1,13 @@
-const estaciones = [
-    { nombre: 'primavera', icono: 'imagen/primavera.png', msj: '¡Las flores están brotando!' },
-    { nombre: 'verano',    icono: 'imagen/verano.png',    msj: '¡Día de sol y playa!' },
-    { nombre: 'otono',     icono: 'imagen/otono.png',     msj: '¡Las hojas caen!' },
-    { nombre: 'invierno',  icono: 'imagen/invierno.png',  msj: '¡Hace frío!' }
-];
+document.addEventListener("DOMContentLoaded", function () {
 
-let indice = 0;
+    const estaciones = [
+        { nombre: 'primavera', icono: 'imagen/primavera.png', msj: '¡Las flores están brotando!' },
+        { nombre: 'verano',    icono: 'imagen/vacaciones.png',    msj: '¡Día de sol y playa!' },
+        { nombre: 'otono',     icono: 'imagen/otono.png',     msj: '¡Las hojas caen!' },
+        { nombre: 'invierno',  icono: 'imagen/temporada.png',  msj: '¡Hace frío!' }
+    ];
 
-window.onload = function () {
+    let indice = 0;
 
     const boton = document.getElementById('boton-estacion');
     const cuerpo = document.body;
@@ -16,36 +16,34 @@ window.onload = function () {
     const mensaje = document.getElementById('mensaje');
     const capaFondo = document.getElementById('fondo-animado');
 
-    capaFondo.innerHTML = '<span>🌸</span><span>🌸</span><span>🌸</span><span>🌸</span><span>🌸</span>';
+    if (!boton) {
+        console.error("No se encontró el botón");
+        return;
+    }
 
-    boton.addEventListener('click', () => {
+    boton.addEventListener('click', function () {
 
         cuerpo.classList.remove(estaciones[indice].nombre);
-        icono.classList.add('cambio-icono');
 
-        setTimeout(() => {
+        indice = (indice + 1) % estaciones.length;
+        const actual = estaciones[indice];
 
-            indice = (indice + 1) % estaciones.length;
-            const actual = estaciones[indice];
+        cuerpo.classList.add(actual.nombre);
+        icono.src = actual.icono;
+        titulo.innerText = actual.nombre.charAt(0).toUpperCase() + actual.nombre.slice(1);
+        mensaje.innerText = actual.msj;
 
-            cuerpo.classList.add(actual.nombre);
-            icono.src = actual.icono;
-            titulo.innerText = actual.nombre.charAt(0).toUpperCase() + actual.nombre.slice(1);
-            mensaje.innerText = actual.msj;
+        // partículas
+        if (actual.nombre === 'primavera') {
+            capaFondo.innerHTML = '🌸 🌸 🌸 🌸 🌸';
+        } else if (actual.nombre === 'verano') {
+            capaFondo.innerHTML = '☀️ ☀️ ☀️ ☀️ ☀️';
+        } else if (actual.nombre === 'otono') {
+            capaFondo.innerHTML = '🍂 🍂 🍂 🍂 🍂';
+        } else if (actual.nombre === 'invierno') {
+            capaFondo.innerHTML = '❄️ ❄️ ❄️ ❄️ ❄️';
+        }
 
-            if (actual.nombre === 'primavera') {
-                capaFondo.innerHTML = '🌸 🌸 🌸 🌸 🌸';
-            } else if (actual.nombre === 'verano') {
-                capaFondo.innerHTML = '☀️ 🏖️ ☀️ 🏖️ ☀️';
-            } else if (actual.nombre === 'otono') {
-                capaFondo.innerHTML = '🍂 🍁 🍂 🍁 🍂';
-            } else if (actual.nombre === 'invierno') {
-                capaFondo.innerHTML = '❄️ ☃️ ❄️ ☃️ ❄️';
-            }
-
-            icono.classList.remove('cambio-icono');
-
-        }, 200);
     });
 
-};
+});

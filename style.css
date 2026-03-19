@@ -19,7 +19,7 @@ body {
 
 /* FONDOS */
 body.primavera {
-    background-image: url("imagen/fondo_primavera.jpg");
+    background-color: red;
 }
 
 body.verano {

@@ -22,10 +22,10 @@ body {
 }
 
 /* Fondos por estación */
-body.primavera { background-image: url('img/fondo_primavera.jpg'); }
-body.verano    { background-image: url('img/fondo_verano.jpg'); }
-body.otono     { background-image: url('img/fondo_otono.jpg'); }
-body.invierno  { background-image: url('img/fondo_invierno.jpg'); }
+body.primavera { background-image: url('imagen/fondo_primavera.jpg'); }
+body.verano    { background-image: url('imagen/fondo_verano.jpg'); }
+body.otono     { background-image: url('imagen/fondo_otono.jpg'); }
+body.invierno  { background-image: url('imagen/fondo_invierno.jpg'); }
 
 /* Capa oscura */
 body::before {

@@ -1,4 +1,3 @@
-//definimos nuestras constantes para cada estacion
 const estaciones = [
     { nombre: 'primavera', icono: 'imagen/primavera.png', msj: '¡Las flores están brotando!' },
     { nombre: 'verano',    icono: 'imagen/verano.png',    msj: '¡Día de sol y playa!' },
@@ -8,7 +7,6 @@ const estaciones = [
 
 let indice = 0;
 
-/* Referencias del HTML */
 const boton = document.getElementById('boton-estacion');
 const cuerpo = document.body;
 const icono = document.getElementById('icono-estacion');
@@ -16,13 +14,11 @@ const titulo = document.getElementById('titulo-estacion');
 const mensaje = document.getElementById('mensaje');
 const capaFondo = document.getElementById('fondo-animado');
 
-// Inicializar partículas
 capaFondo.innerHTML = '<span>🌸</span><span>🌸</span><span>🌸</span><span>🌸</span><span>🌸</span>';
 
 boton.addEventListener('click', () => {
 
     cuerpo.classList.remove(estaciones[indice].nombre);
-
     icono.classList.add('cambio-icono');
 
     setTimeout(() => {
@@ -35,7 +31,6 @@ boton.addEventListener('click', () => {
         titulo.innerText = actual.nombre.charAt(0).toUpperCase() + actual.nombre.slice(1);
         mensaje.innerText = actual.msj;
 
-        // partículas
         if (actual.nombre === 'primavera') {
             capaFondo.innerHTML = '<span>🌸</span><span>🌸</span><span>🌸</span><span>🌸</span><span>🌸</span>';
         } else if (actual.nombre === 'verano') {

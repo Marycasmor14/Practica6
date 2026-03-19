@@ -24,8 +24,8 @@ body {
 /* Fondos por estación */
 body.primavera { background-image: url('imagen/fondo_primavera.jpg'); }
 body.verano    { background-image: url('imagen/fondo_verano.jpg'); }
-body.otono     { background-image: url('imagen/fondo_otono.jpg'); }
-body.invierno  { background-image: url('imagen/fondo_invierno.jpg'); }
+body.otono     { background-image: url('imagen/fondo_otono.jfif'); }
+body.invierno  { background-image: url('imagen/fondo_invierno.jfif'); }
 
 /* Capa oscura */
 body::before {

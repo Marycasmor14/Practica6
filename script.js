@@ -1,9 +1,9 @@
 //definimos nuestras constantes para cada estacion
 const estaciones = [
-    { nombre: 'primavera', icono: 'img/primavera.png', msj: '¡Las flores están brotando!' },
-    { nombre: 'verano',    icono: 'img/verano.png',    msj: '¡Día de sol y playa!' },
-    { nombre: 'otono',     icono: 'img/otono.png',     msj: '¡Las hojas caen y todo se vuelve naranja!' },
-    { nombre: 'invierno',  icono: 'img/invierno.png',  msj: '¡Hace frío y todo está cubierto de nieve!' }
+    { nombre: 'primavera', icono: 'imagen/primavera.png', msj: '¡Las flores están brotando!' },
+    { nombre: 'verano',    icono: 'imagen/verano.png',    msj: '¡Día de sol y playa!' },
+    { nombre: 'otono',     icono: 'imagen/otono.png',     msj: '¡Las hojas caen y todo se vuelve naranja!' },
+    { nombre: 'invierno',  icono: 'imagen/invierno.png',  msj: '¡Hace frío y todo está cubierto de nieve!' }
 ];
 
 let indice = 0;
